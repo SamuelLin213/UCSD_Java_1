@@ -237,6 +237,10 @@ public class EarthquakeCityMap extends PApplet {
 			checkEarthquakesForClick();
 			if (lastClicked == null) {
 				checkCitiesForClick();
+				//checkAirportForClick();
+			}
+			if(lastClicked == null)
+			{
 				checkAirportForClick();
 			}
 		}
@@ -246,6 +250,7 @@ public class EarthquakeCityMap extends PApplet {
 	// and respond appropriately
 	private void checkAirportForClick()
 	{
+		if (lastClicked != null) return;
 		// Loop over the earthquake markers to see if one of them is selected
 		for (Marker marker : airportList) {
 			if (!marker.isHidden() && marker.isInside(map, mouseX, mouseY)) {
